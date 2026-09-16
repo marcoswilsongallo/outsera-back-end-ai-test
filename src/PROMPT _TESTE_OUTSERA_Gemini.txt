@@ -1,0 +1,44 @@
+você é um engenheiro de software experiente.
+
+Precisamos criar um projeto python versão 3.13 utilizando uma arquitetura clean em "C:\Sistemas\teste-outsera-python\outsera-back-end-ai-test".
+
+Precisamos criar um aruivo de inicialização do projeto python nominado "app.py" na pasta "src\" com a inicialização do framework flask em local host e porta 5000
+
+Ao iniciar o projeto precisamos criar um banco de dados embarcado utilizado SQLite nominado "MovieList.db" na pasta "src\infrastructure\" e sua conexão e também criar uma tabela nominado "Movies" com a estrutura e dados do arquivo csv disponivel em "C:\Sistemas\teste-outsera-python\outsera-back-end-ai-test\src\infrastructure\Movielist.csv" gerar script automático de inicialização que já carrega o CSV no banco na primeira execução
+
+Com framework SQLAlchemy vamos criar todos os métodos de input, delete e update movies tudo isso dentro de uma classe python nominado "DataBaseMovies"  implementados dentro de estrutura try exception respeintando suas semanticas no arquivo database.py dentro da pasta "src\infrastructure\".
+
+Precisamos criar uma classe python nominado "intervalOfTimeAwards" com as propriedades "producer" tipo str, "interval" tipo int, "previousWin" tipo int, "followingWin" tipo int. ainda nessa classe crie um método ToJson tendo como parametros as propriedades da classe intervalOfTimeAwards retornando um json da classe com os valores recebidos nos parametros. implentar essa classe no arquivo "IntervalTimeAwards.py" dentro da pasta "src\infrastructure\". 
+
+Iremos utilizar a o framework Flask para gerar um microserviço Rest full onde teremos um metodo GET nomeado como WorstMoviesGoldenRaspberryAwards na rota "'/goldenraspberryawards/wostmovies', também precisamos criar os metodos movies para os verbos Restfull DELETE, POST, PUT, na rota  "/goldenraspberryawards/movies" respeintando as semanticas de cada um no arquivo routes.py dentro da pasta "src\Routes\" 
+configure um ReteLimit de 20 chamadas a cada 10 segundos com sleep rentry utilizando a biblioteca ratelimit limits, sleep_and_retry.
+
+Precisamos criar também um classe python nominado "GoldenRaspberryAwards" e um metodo "wostmovies" Vamos implentar esse metodo utilizando SQLAlchemy já configurado anteriormente para selecionar todos os registros da tabela "Movies" com retorno de um objeto json. 
+
+Também sprecisamos criar os metods input, delete, update movies todos com retorno boolean. 
+
+Também precisamos implentar um metodo "IntervalTwoAwards" vamos implementar esse método utilizando SQLAlchemy já configurado anteriormente para selecionar todos os registros da tabela "Movies" que tenham o field winner = "yes" em seguida ordene em orderm crescente os fields "year" e "producers" e a partir do resultado crie uma lista de tuplas com "producers" e "year" em seguida agrupe os anos unicos por nome e filtre os nomes que tenham mais de um ano diferente com esse resultado vamos gerar uma nova lista de tuplas com "preducers" e os "year" encontrados para cada "producers" e ainda um novo field "interval" com o valor int da subtração do primeiro "year' encontrado pelo segunda assim teremos a diferneça entre os fields "year" e para finalizar esse metodo vamos passar cada membro da lista como parametro para o metodo ToJson da classe intervalOfTimeAwards criando uma lista do retorno
+
+precisamos implementar um metodo nominado "ProducerLongestIntervalTwoAwards" que recebe como parametros uma lista de json onde ira agrupar o field "interval" para identificar qual o maior valor no agrupamento retornando todos os itens da lista que tiver no field "interval" o maior valor encontrado.
+e com implenatação dentro de uma estrutura try exception no arquivo arquivo entities.py dentro da pasta "src\Domain\"
+
+Iremos utilizar a o framework Flask para gerar um microserviço Restfull onde teremos um metodo GET nomeado como "ProducerLongestTwoAwards" na rota "'/goldenraspberryawards/LongestTwoAwards', no arquivo routes.py dentro da pasta "src\Routes\" respeintando as semanticas 
+configure um ReteLimit de 20 chamadas a cada 10 segundos com sleep rentry utilizando a biblioteca ratelimit limits, sleep_and_retry
+Esse metodo retornará o json retornado pelo metodo "ProducerLongestIntervalTwoAwards" que recebe como parametro a lista retornada pelo metodo "IntervalTwoAwards".
+
+precisamos implementar um metodo nominado "ProducerShortestIntervalTwoAwards" que recebe como parametros uma lista de json onde ira agrupar o field "interval" para identificar qual o menor valor no agrupamento retornando todos os itens da lista que tiver no field "interval" o menor valor encontrado no grupo.
+e com implenatação dentro de uma estrutura try exception no arquivo arquivo entities.py dentro da pasta "src\Domain\"
+
+Iremos utilizar a o framework Flask para gerar um microserviço Restfull onde teremos um metodo GET nomeado como "ProducerShortTwoAwards" na rota "'/goldenraspberryawards/shortestTwoAwards', no arquivo routes.py dentro da pasta "src\Routes\" respeintando as semanticas
+configure um ReteLimit de 20 chamadas a cada 10 segundos com sleep rentry utilizando a biblioteca ratelimit limits, sleep_and_retry 
+Esse metodo retornará o json retornado pelo metodo "ProducerShortestIntervalTwoAwards" que recebe como parametro a lista retornada pelo metodo "IntervalTwoAwards".
+
+precisamos gerar o arquivo requirements.txt com todas as dependencias na pasta "src\"
+
+precisamos gerar os testes unitarios de todos os metodos do arquivo entities.py da pasta "src\Domain\" no arquivo test_entities.py na pasta "src\tests"
+
+Devem ser implementados testes de integração. Eles devem garantir que os dados
+obtidos estão de acordo com os dados fornecidos na proposta;
+
+gere comando DOS para gerar os arquivos utilizados no projeto utilizando Path completo da aplicação a partir de "C:\Sistemas\teste-outsera-python\outsera-back-end-ai-test"
+
